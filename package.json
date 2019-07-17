@@ -1,0 +1,22 @@
+{
+  "name": "gistpub",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --experimental-modules index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilyaigpetrov/gistpub.git"
+  },
+  "author": "ilyaigpetrov",
+  "private": "true",
+  "bugs": {
+    "url": "https://github.com/ilyaigpetrov/gistpub/issues"
+  },
+  "homepage": "https://github.com/ilyaigpetrov/gistpub#readme",
+  "devDependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}
