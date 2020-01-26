@@ -16,9 +16,23 @@ import fetch from 'node-fetch';
     return;
   }
 
-  const gists = (
-    await fetch(`https://api.github.com/users/${username}/gists`).then((res) => res.json())
-  ).filter((gist) => gist.description);
+  const gists = [];
+
+  let ifDrained = false;
+  let currentPage = 0;
+  while (ifDrained != true) {
+
+    ++currentPage;
+    const newGists = (
+      await fetch(`https://api.github.com/users/${username}/gists?page=${currentPage}`).then((res) => res.json())
+    );
+    if (newGists.length < 30) {
+      ifDrained = true;
+    }
+    gists.push(
+      ...newGists.filter((gist) => gist.description),
+    );
+  }
 
   const items = await Promise.all(
     gists.map((gist, index) => {
@@ -29,7 +43,7 @@ import fetch from 'node-fetch';
         .then((res) => res.text())
         .then((text) => parseInt(text.match(/(\d+) users? starred this/)[1]))
         .then((starsCount) =>
-          `  ${index}. [${gist.description}](${gist.html_url}) ★${starsCount} <sub>${created}</sub>`,
+          `  ${index + 1}. [${gist.description.replace(/ \| by .+$/g, '')}](${gist.html_url}) ★${starsCount} <sub>${created}</sub>`,
         );
     })
   );
