@@ -16,7 +16,7 @@
     "url": "https://github.com/ilyaigpetrov/gistpub/issues"
   },
   "homepage": "https://github.com/ilyaigpetrov/gistpub#readme",
-  "devDependencies": {
+  "dependencies": {
     "node-fetch": "^2.6.0"
   }
 }

@@ -1,0 +1,15 @@
+name: Attach to the gist
+
+on:
+  workflow_dispatch
+
+jobs:
+  publish-to-the-web:
+    runs-on: ubuntu-latest
+    name: Attach to the target gist
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci
+      - name: Attach
+        id: attach
+        run: GH_TOKEN=${{ secrets.GH_TOKEN }} npm start -- ${{ secrets.GH_USERNAME }} ${{ secrets.GH_GIST }}
