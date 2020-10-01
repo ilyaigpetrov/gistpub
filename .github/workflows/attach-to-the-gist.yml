@@ -12,4 +12,4 @@ jobs:
       - run: npm ci
       - name: Attach
         id: attach
-        run: GH_TOKEN=${{ secrets.GH_TOKEN }} npm start -- ${{ secrets.GH_USERNAME }} ${{ secrets.GH_GIST }}
+        run: GH_TOKEN=${{ secrets.GH_TOKEN }} npm start -- ${{ secrets.GH_USERNAME }} ${{ secrets.GH_GIST_ID }}
