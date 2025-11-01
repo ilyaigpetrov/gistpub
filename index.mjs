@@ -39,7 +39,7 @@ import { Buffer } from 'node:buffer';
 
       const created = new Date(gist.created_at).toLocaleDateString();
       const updated = new Date(gist.updated_at).toLocaleDateString();
-      return `${index + 1}. [${gist.description.replace(/ \| by .+$/g, '')}](${gist.html_url}) <sub>${created}</sub>`;
+      return `${index + 1}. [${gist.description.replace(/ \| .+$/g, '')}](${gist.html_url}) <sub>${created}</sub>`;
     })
   );
 
