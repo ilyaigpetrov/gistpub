@@ -39,12 +39,7 @@ import fetch from 'node-fetch';
 
       const created = new Date(gist.created_at).toLocaleDateString();
       const updated = new Date(gist.updated_at).toLocaleDateString();
-      return fetch(`https://gist.github.com/${username}/${gist.id}/stargazers`)
-        .then((res) => res.text())
-        .then((text) => parseInt(text.match(/(\d+) users? starred this/)[1]))
-        .then((starsCount) =>
-          `  ${index + 1}. [${gist.description.replace(/ \| by .+$/g, '')}](${gist.html_url}) ★${starsCount} <sub>${created}</sub>`,
-        );
+      return `${index + 1}. [${gist.description.replace(/ \| by .+$/g, '')}](${gist.html_url}) <sub>${created}</sub>`;
     })
   );
 
