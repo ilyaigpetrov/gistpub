@@ -1,5 +1,3 @@
-import fetch from 'node-fetch';
-
 (async () => {
 
   const args = process.argv.slice(2);

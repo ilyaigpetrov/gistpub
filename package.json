@@ -2,9 +2,9 @@
   "name": "gistpub",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
-    "start": "node --experimental-modules index.mjs"
+    "start": "node index.mjs"
   },
   "repository": {
     "type": "git",
@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/ilyaigpetrov/gistpub/issues"
   },
-  "homepage": "https://github.com/ilyaigpetrov/gistpub#readme",
-  "dependencies": {
-    "node-fetch": "^2.6.0"
-  }
+  "homepage": "https://github.com/ilyaigpetrov/gistpub#readme"
 }

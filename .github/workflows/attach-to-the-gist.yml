@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Attach to the target gist
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v5
       - run: npm ci
       - name: Attach
         id: attach
